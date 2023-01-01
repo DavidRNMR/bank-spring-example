@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class SavingAccountDto implements Serializable {
+public class SavingAccountDto extends BankAccountDto implements Serializable {
 
     private String id;
     private Float balance;

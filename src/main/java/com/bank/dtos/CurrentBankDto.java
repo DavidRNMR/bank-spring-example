@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class CurrentBankDto implements Serializable {
+public class CurrentBankDto extends  BankAccountDto implements Serializable {
 
     private String id;
     private Double balance;
