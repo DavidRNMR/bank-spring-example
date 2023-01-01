@@ -12,8 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "operations")
-
 public class Operation {
 
     @Id

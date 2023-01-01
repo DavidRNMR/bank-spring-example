@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="current_account")
 public class CurrentAccount extends BankAccount{
 
     private Float overDraft;

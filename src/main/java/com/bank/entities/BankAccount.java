@@ -10,15 +10,15 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYPE", length = 4)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="bank_account")
-public class BankAccount {
+public abstract class BankAccount {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private Float balance;
     private Date createAt;
     @Enumerated(EnumType.STRING)
