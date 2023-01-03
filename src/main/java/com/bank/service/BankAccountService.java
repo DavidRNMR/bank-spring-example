@@ -10,8 +10,8 @@ import java.util.List;
 public interface BankAccountService {
 
     CustomerDto saveCustomer(CustomerDto customerDto);
-    CurrentBankDto saveCurrentBankDto (Float balance, Float overDraft, Long id) throws CustomerNotFoundException;
-    SavingAccountDto saveCurrentBank(Float balance, Float overDraft , Long id) throws CustomerNotFoundException;
+    CurrentBankDto saveCurrentBankDto (Float balance, Float overDraft, Long customerId) throws CustomerNotFoundException;
+    SavingAccountDto saveCurrentBank(Float balance, Float interestRate , Long customerId) throws CustomerNotFoundException;
     List<CustomerDto> findAllCustomers();
     BankAccountDto getBankAccount (String accountId) throws BankAccountNotFoundException;
     void debit (String accountId, Float amount, String description) throws BankAccountNotFoundException, BalanceNotSufficientException;
@@ -20,11 +20,11 @@ public interface BankAccountService {
 
     List<BankAccountDto> findAllBanks();
 
-    CustomerDto getOneCustoner (Long id) throws CustomerNotFoundException;
+    CustomerDto getOneCustomer (Long id) throws CustomerNotFoundException;
     CustomerDto updateCustomer (CustomerDto customerDto);
-    void deleteCustomer (Long id);
+    void deleteCustomer (Long customerId);
 
-    List<OperationDto> findAllOperations();
+    List<OperationDto> accountHistory (String accountId);
 
     AccountHistoryDto getAccountHistory (String accountId, Integer page, Integer size) throws BankAccountNotFoundException;
 
